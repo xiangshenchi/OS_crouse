@@ -1,0 +1,23 @@
+# VERSION 3
+CXX = g++
+TARGET = hello
+OBJ = main.o printhello.o factorial.o
+ 
+# show all warnings
+CXXLAGS = -c -Wall
+ 
+# $@  TARGET, $^  .o
+$(TARGET): $(OBJ)
+	$(CXX) -o $@ $^
+ 
+# $<  %.cpp
+# $@  %.o
+%.o: %.cpp
+	$(CXX) $(CXXLAGS) $< -o $@
+ 
+# clean
+.PHONY: clean
+ 
+# -f
+clean:
+	rm -f *.o $(TARGET)

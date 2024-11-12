@@ -1,0 +1,19 @@
+# VERSION 4
+CXX = g++
+TARGET = hello
+# .cpp  SRC/
+SRC = $(wildcard *.cpp)
+# SRC/.cpp  .o
+OBJ = $(patsubst %.cpp, %.o,$(SRC))
+ 
+CXXLAGS = -c -Wall
+ 
+$(TARGET): $(OBJ)
+	$(CXX) -o $@ $^
+ 
+%.o: %.cpp
+	$(CXX) $(CXXLAGS) $< -o $@
+ 
+.PHONY: clean
+clean:
+	rm -f *.o $(TARGET)

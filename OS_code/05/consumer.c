@@ -82,6 +82,8 @@ void  main(void)
                 next_consumed.Name,
                 next_consumed.Value);
 
+//sleep(1);
+
      if(counter[0] != counter[1])
      {
              *status = STATUS_COMPLETE;

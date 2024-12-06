@@ -84,6 +84,8 @@ void  main(int  argc, char *argv[])
         sprintf(product.Name, "N:%d",product.Id);
         product.Value = product.Id;
         printf("Produced new product %d\n", product.Id);
+        
+        //sleep(1);
 
         while(counter[0] == BUFFER_SIZE)
             ;
